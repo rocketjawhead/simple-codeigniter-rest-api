@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/system.*
+RewriteRule ^(.*)$ index.php?/home$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?/home$1 [L]
+php_value upload_max_filesize 60240000M
+php_value post_max_size 60240000M
